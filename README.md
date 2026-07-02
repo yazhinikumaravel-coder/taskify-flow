@@ -19,3 +19,6 @@ A simple and responsive To-Do application that helps users organize daily tasks 
 - HTML5
 - CSS3
 - JavaScript (ES6)
+
+
+PREVIEW:https://taskify-flow.netlify.app/
