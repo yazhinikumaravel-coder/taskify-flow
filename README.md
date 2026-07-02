@@ -1,20 +1,21 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+React if you prefer, I can customize it).
 
-# Run and deploy your AI Studio app
+# 📝 To-Do App
 
-This contains everything you need to run your app locally.
+A simple and responsive To-Do application that helps users organize daily tasks efficiently. Users can add, edit, mark as complete, and delete tasks with an intuitive interface.
 
-View your app in AI Studio: https://ai.studio/apps/a9a27fec-de25-449f-84cf-7bb87359988f
+## 🚀 Features
 
-## Run Locally
+- ➕ Add new tasks
+- ✏️ Edit existing tasks
+- ✅ Mark tasks as completed
+- ❌ Delete tasks
+- 📋 View pending and completed tasks
+- 💾 Data persistence using Local Storage
+- 📱 Responsive design for desktop and mobile
 
-**Prerequisites:**  Node.js
+## 🛠️ Technologies Used
 
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- HTML5
+- CSS3
+- JavaScript (ES6)
