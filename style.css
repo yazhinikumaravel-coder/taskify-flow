@@ -1,0 +1,254 @@
+/* ===== Custom Variables & Overrides ===== */
+:root {
+  --color-rose-glow: rgba(244, 63, 94, 0.2);
+  --color-violet-glow: rgba(124, 58, 237, 0.25);
+}
+
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  color: #ffffff;
+  background-color: #020617; /* Slate-950 */
+}
+
+/* Force hide class with priority */
+.hidden {
+  display: none !important;
+}
+
+/* ===== Decorative ambient background blobs ===== */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(110px);
+  animation: pulse 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+.blob-rose {
+  top: 15%;
+  left: 15%;
+  width: 320px;
+  height: 320px;
+  background: var(--color-rose-glow);
+}
+
+.blob-violet {
+  bottom: 15%;
+  right: 15%;
+  width: 380px;
+  height: 380px;
+  background: var(--color-violet-glow);
+  animation-duration: 9s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.12);
+  }
+}
+
+/* ===== Scrollbar Styling ===== */
+.task-list-wrap::-webkit-scrollbar {
+  width: 5px;
+}
+
+.task-list-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.task-list-wrap::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+}
+
+.task-list-wrap::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+/* Custom Scrollbar for Main Modal Content */
+#profile-settings-modal .p-6::-webkit-scrollbar {
+  width: 5px;
+}
+#profile-settings-modal .p-6::-webkit-scrollbar-track {
+  background: transparent;
+}
+#profile-settings-modal .p-6::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.85);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===== Custom Toast Styling ===== */
+.toast-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 1rem;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  pointer-events: auto;
+  animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  max-width: 320px;
+}
+
+.toast-item.toast-success {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(6, 78, 59, 0.8);
+  color: #ecfdf5;
+}
+
+.toast-item.toast-error {
+  border-color: rgba(239, 68, 68, 0.3);
+  background: rgba(127, 29, 29, 0.8);
+  color: #fef2f2;
+}
+
+.toast-item.toast-info {
+  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(30, 58, 138, 0.8);
+  color: #eff6ff;
+}
+
+.toast-item.dismissing {
+  animation: toastOut 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===== Custom Checkbox & Form Styling ===== */
+.filter-btn {
+  flex: 1;
+  padding: 0.45rem 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.875rem;
+  color: rgba(244, 114, 182, 0.6); /* rose-400 */
+  transition: all 0.2s ease;
+  text-align: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.filter-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.filter-btn.active {
+  background: rgba(244, 63, 94, 0.3); /* rose-500 */
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(254, 205, 211, 0.15);
+}
+
+/* Custom Checkbox tick effect */
+.checkbox-custom:checked::before {
+  content: '\2713';
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Ensure no border issues on elements */
+button, input, textarea {
+  font-family: inherit;
+}
+
+/* Mobile responsive padding constraints */
+@media (max-width: 440px) {
+  .card {
+    border-radius: 24px !important;
+    min-height: calc(100vh - 2rem) !important;
+  }
+}

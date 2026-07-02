@@ -1,0 +1,6 @@
+{
+  "name": "To-Do App",
+  "description": "A clean, modern, glassmorphic to-do list application with smooth animations, local storage persistence, task filtering, and editing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
